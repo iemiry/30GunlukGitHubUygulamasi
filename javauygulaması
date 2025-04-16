@@ -1,1 +1,21 @@
 //başlangıç olarak bu etkinlik java ile yapılabilecek uygulama fikirlerine bakıldı
+
+import java.awt.Polygon;
+
+class JGoktasi extends Polygon{
+
+     int uSolXpoz, uSolYpoz;
+	
+     int xYonu=1;
+     int yYonu=1;
+
+     int genislik=JOyunalani.oyunAlaniGenislik;
+     int yukseklik=JOyunalani.oyunAlaniYukseklik;	
+	
+
+
+
+
+
+
+}
