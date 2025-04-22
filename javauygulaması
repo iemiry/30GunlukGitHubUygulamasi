@@ -15,7 +15,20 @@ class JGoktasi extends Polygon{
      	int [] cokgenXArray, cokgenYArray;
 	
 	public static int[] hbCokgenXArray={10,17,26,34,27,36,26,14,8,1,5,1,10};
-	public static int[] hbCokgenYArray={10,17,26,34,27,36,26,14,8,1,5,1,10};	
+	public static int[] hbCokgenYArray={0,5,1,8,13,20,31,28,31,22,16,0};
+
+
+	public JGoktasi(int[] cokgenXArray,int[] cokgenYArray,int cokgenNokta,int rastXBasPoz,int rastyBasPoz){
+
+		super(cokgenXArray, cokgenYArray,cokgenNokta);
+		this.xYonu=(int)(Math.random()*4+1);
+		this.yYonu=(int)(Math.random()*4+1);
+
+		this.uSolXPoz=rastXBasPoz;
+		this.uSolyPoz=rastYBasPoz;
+
+
+}	
 
 		
 	
