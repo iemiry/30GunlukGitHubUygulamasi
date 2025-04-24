@@ -25,10 +25,27 @@ class JGoktasi extends Polygon{
 		this.yYonu=(int)(Math.random()*4+1);
 
 		this.uSolXPoz=rastXBasPoz;
-		this.uSolyPoz=rastYBasPoz;
+		this.uSolYPoz=rastYBasPoz;
 
 
 }	
+
+
+	public void hareketEt(){
+		int uSolXPoz=super.xpoints[0];
+		int uSolYpoz=super.ypoints[0];
+
+		if(uSolXPoz < 0 || (uSolXPoz + 25) > genislik) xYonu = -xYonu;
+		if(uSolPYoz < 0 || (uSolYPoz + 50) > yukseklik) xYonu = -yYonu;
+
+		for(int i=0; i < super.xpoints.length; i++){
+
+			super.xpoints[i] += xYonu;
+			super.ypoints[i] += yYonu;
+
+		}
+		
+	}
 
 		
 	
