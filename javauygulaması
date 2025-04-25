@@ -45,7 +45,34 @@ class JGoktasi extends Polygon{
 
 		}
 		
+	}//hareket sonu
+
+	//göktaşının x noktalaarı çağrılıyor
+	public static int [] getCokgenXArray(int rastXBasPoz){
+		int[] rastCokgeXArray = (int[]) hbCokgenXArray.clone();
+
+			for(int i = 0; i < rastCokgeXArray.length; i++ ){
+
+				rastCokgeXArray[i] += rastXBasPoz;
+
+			}
+
+		return rastCokgeXArray;
 	}
+
+	//göktaşının y noktalaarı çağrılıyor
+	public static int [] getCokgenYArray(int rastYBasPoz){
+		int[] rastCokgeYArray = (int[]) hbCokgenYArray.clone();
+
+			for(int i = 0; i < rastCokgeYArray.length; i++ ){
+
+				rastCokgeYArray[i] += rastYBasPoz;
+
+			}
+
+		return rastCokgeYArray;
+	}
+	
 
 		
 	
