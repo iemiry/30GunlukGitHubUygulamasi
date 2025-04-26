@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import java.swing.JComponent;
 import java.swing.JFrame;
 
-
+    public class JOyunalani extends JFrame{}
 
 
 
