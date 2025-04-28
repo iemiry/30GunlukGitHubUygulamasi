@@ -9,7 +9,33 @@ import java.util.concurrent.TimeUnit;
 import java.swing.JComponent;
 import java.swing.JFrame;
 
-    public class JOyunalani extends JFrame{}
+    public class JOyunalani extends JFrame{
+
+        public static int oyunAlaniGenislik=1000;
+
+        public static int oyunAlaniYukseklik=1000;
+
+        public static void main(){
+            new JOyunalani();
+        }
+
+        public JOyunalani(){
+            this.setSize(oyunAlaniGenislik, oyunAlaniYukseklik);
+            this.setTitle("Java Uzay Oyunu");
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            
+            this.add(oyunPanel, BorderLayout.CENTER);
+
+            ScheduledThreadPoolExecutor calistir = new ScheduledThreadPoolExecutor(5);
+
+            calistir.scheduleAtFixedRate(new EkraniTemizle(this), 0L, 20L, TimeUnit.MILLISECONDS);
+
+            this.setVisible(true);
+    
+
+        }
+
+    }
 
 
 
