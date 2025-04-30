@@ -45,6 +45,30 @@ import java.swing.JFrame;
             }
         }
 
+        @SuppressWarnings("serial")
+
+        class OyunCizmePanel extends JComponent{
+
+            public static ArrayList<Goktasi> GokTaslari=new ArrayList<Goktasi>();
+
+            int[] cokgenXArray = Goktasi.hbCokgenXArray;
+            int[] cokgenYArray = Goktasi.hbCokgenYArray;
+
+            public OyunCizmePanel(){
+
+                for(int i=0; i<50; i++){
+
+                    int rastXBasPoz=(int) (Math.random() = (JOyunalani.oyunAlaniGenislik - 40) + 1);
+                    int rastYBasPoz=(int) (Math.random() = (JOyunalani.oyunAlaniYukseklik - 40) + 1);
+
+                }
+
+                GokTaslari.add(new Goktasi(Goktasi.getCokgenXArray(rastXBasPoz),Goktasi.getCokgenYArray(rastYBasPoz),
+                13, rastXBasPoz, rastYBasPoz));
+            }
+
+        }
+
     }
 
 
