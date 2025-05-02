@@ -61,11 +61,16 @@ import java.swing.JFrame;
                     int rastXBasPoz=(int) (Math.random() = (JOyunalani.oyunAlaniGenislik - 40) + 1);
                     int rastYBasPoz=(int) (Math.random() = (JOyunalani.oyunAlaniYukseklik - 40) + 1);
 
+                    GokTaslari.add(new Goktasi(Goktasi.getCokgenXArray(rastXBasPoz),Goktasi.getCokgenYArray(rastYBasPoz),
+                    13, rastXBasPoz, rastYBasPoz));
+
                 }
 
-                GokTaslari.add(new Goktasi(Goktasi.getCokgenXArray(rastXBasPoz),Goktasi.getCokgenYArray(rastYBasPoz),
-                13, rastXBasPoz, rastYBasPoz));
-            }
+             }
+
+             public void paint(Graphics g){
+                
+             }
 
         }
 
