@@ -10,7 +10,9 @@ class JGoktasi extends Polygon{
 	int yYonu=1;
 
 	int genislik=JOyunalani.oyunAlaniGenislik;
-     	int yukseklik=JOyunalani.oyunAlaniYukseklik;
+    int yukseklik=JOyunalani.oyunAlaniYukseklik;
+
+	public static ArrayList<JGoktasi> GokTaslari = new ArrayList<JGoktasi>();
 
      	int [] cokgenXArray, cokgenYArray;
 	

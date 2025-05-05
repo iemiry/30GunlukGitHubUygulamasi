@@ -23,6 +23,8 @@ import java.swing.JFrame;
             this.setSize(oyunAlaniGenislik, oyunAlaniYukseklik);
             this.setTitle("Java Uzay Oyunu");
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            OyunCizmePanel oyunPanel = new OyunCizmePanel();
             
             this.add(oyunPanel, BorderLayout.CENTER);
 
@@ -49,10 +51,10 @@ import java.swing.JFrame;
 
         class OyunCizmePanel extends JComponent{
 
-            public static ArrayList<Goktasi> GokTaslari=new ArrayList<Goktasi>();
+            public static ArrayList<JGoktasi> GokTaslari=new ArrayList<JGoktasi>();
 
-            int[] cokgenXArray = Goktasi.hbCokgenXArray;
-            int[] cokgenYArray = Goktasi.hbCokgenYArray;
+            int[] cokgenXArray = JGoktasi.hbCokgenXArray;
+            int[] cokgenYArray = JGoktasi.hbCokgenYArray;
 
             public OyunCizmePanel(){
 
@@ -61,7 +63,7 @@ import java.swing.JFrame;
                     int rastXBasPoz=(int) (Math.random() = (JOyunalani.oyunAlaniGenislik - 40) + 1);
                     int rastYBasPoz=(int) (Math.random() = (JOyunalani.oyunAlaniYukseklik - 40) + 1);
 
-                    GokTaslari.add(new Goktasi(Goktasi.getCokgenXArray(rastXBasPoz),Goktasi.getCokgenYArray(rastYBasPoz),
+                    GokTaslari.add(new JGoktasi(JGoktasi.getCokgenXArray(rastXBasPoz),JGoktasi.getCokgenYArray(rastYBasPoz),
                     13, rastXBasPoz, rastYBasPoz));
 
                 }
@@ -71,6 +73,19 @@ import java.swing.JFrame;
              public void paint(Graphics g){
                 
                 Graphics2D grafikAyarlari=(Graphics2D) g;
+
+                grafikAyarlari.setColor(Color.BLACK);   
+                grafikAyarlari.fillRect(0,0, getWidth(), getHeight());
+
+                grafikAyarlari.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+                grafikAyarlari.setPaint(Color.WHITE);
+
+                for(JGoktasi tas: GokTaslari){
+                    tas.hareketET();
+
+                    grafikAyarlari.draw(tas);   
+                }
 
              }
 
