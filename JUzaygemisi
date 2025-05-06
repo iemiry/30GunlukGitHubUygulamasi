@@ -1,1 +1,17 @@
+import java.awt.Polygon;
 
+@SuppressWarnings("serial")
+public class JUzaygemisi extends Polygon {
+
+    int uSolXPoz = 500, uSolYpoz = 400;
+    
+    int xYonu = 0;
+    int yYonu = 0;
+
+    int genislik = JOyunalani.oyunAlaniGenislik;
+    int yukseklik = JOyunalani.oyunAlaniYukseklik;
+
+    public static int cokgenXArray = {500, 527, 500, 5008, 500};
+    public static int cokgenYArray = {500, 527, 500, 5008, 500};
+
+}
