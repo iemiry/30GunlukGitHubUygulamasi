@@ -6,6 +6,10 @@ import java.awt.RenderingHints;
 import java.util.ArrayList;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import java.swing.JComponent;
 import java.swing.JFrame;
 
@@ -23,6 +27,40 @@ import java.swing.JFrame;
             this.setSize(oyunAlaniGenislik, oyunAlaniYukseklik);
             this.setTitle("Java Uzay Oyunu");
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            //key listener tuş takip
+
+            addKeyListener(new KeyListener(){
+
+                @Override
+                public void keyPressed(KeyEvent e) {
+
+                }
+
+                
+                @Override
+                public void keyReleased(KeyEvent e) {
+
+                    if(e.getKeyCode() == 87){
+                        System.out.println("İleri");
+                    }else
+                    if(e.getKeyCode() == 83){
+                        System.out.println("Geri");
+                    }
+                         
+
+                }
+
+                
+                @Override
+                public void keyTyped(KeyEvent e) {
+
+                }
+
+
+
+
+            });
 
             OyunCizmePanel oyunPanel = new OyunCizmePanel();
             
