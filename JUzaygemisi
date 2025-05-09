@@ -1,0 +1,40 @@
+import java.awt.Polygon;
+
+@SuppressWarnings("serial")
+public class JUzaygemisi extends Polygon {
+
+    int uSolXPoz = 500, uSolYpoz = 400;
+    
+    int xYonu = 0;
+    int yYonu = 0;
+
+    int genislik = JOyunalani.oyunAlaniGenislik;
+    int yukseklik = JOyunalani.oyunAlaniYukseklik;
+
+    public static int cokgenXArray = {500, 527, 500, 5008, 500};
+    public static int cokgenYArray = {500, 527, 500, 5008, 500};
+
+    public JUzaygemisi(){
+
+        super(cokgenXArray, cokgenYArray, 5);
+    }
+
+    public void hareketEt(){
+
+        int uSolXPoz = super.xpoints[0];
+        int uSolYPoz = super.ypoints[0];
+
+        if(uSolXPoz < 0 || (uSolXPoz + 25) > genislik) xYonu = -xYonu;
+        if(uSolYPoz < 0 || (uSolYPoz + 50) > yukseklik) yYonu = -yYonu;
+
+        for (int i = 0; i< super.xpoints.length; i++){
+
+            super.xpoints[i] += xYonu;
+            super.ypoints[i] += yYonu;
+             
+        }
+
+
+    }
+
+}
