@@ -94,6 +94,8 @@ import java.swing.JFrame;
             int[] cokgenXArray = JGoktasi.hbCokgenXArray;
             int[] cokgenYArray = JGoktasi.hbCokgenYArray;
 
+            JUzaygemisi gemi =  new JUzaygemisi();
+
             public OyunCizmePanel(){
 
                 for(int i=0; i<50; i++){
@@ -120,10 +122,13 @@ import java.swing.JFrame;
                 grafikAyarlari.setPaint(Color.WHITE);
 
                 for(JGoktasi tas: GokTaslari){
-                    tas.hareketET();
+                    tas.hareketEt();
 
                     grafikAyarlari.draw(tas);   
                 }
+
+                gemi.hareketEt();
+                grafikAyarlari.draw(gemi);  
 
              }
 
