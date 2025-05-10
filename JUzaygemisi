@@ -11,8 +11,10 @@ public class JUzaygemisi extends Polygon {
     int genislik = JOyunalani.oyunAlaniGenislik;
     int yukseklik = JOyunalani.oyunAlaniYukseklik;
 
-    public static int cokgenXArray = {500, 527, 500, 5008, 500};
-    public static int cokgenYArray = {500, 527, 500, 5008, 500};
+    public static int cokgenXArray = {-13, 14, -13, -5, -13};
+    public static int cokgenYArray = {-15, 0, 15, 0, -15};
+
+    static int yonAcisi = 0;
 
     public JUzaygemisi(){
 
@@ -20,7 +22,7 @@ public class JUzaygemisi extends Polygon {
     }
 
     public void hareketEt(){
-
+        /* 
         int uSolXPoz = super.xpoints[0];
         int uSolYPoz = super.ypoints[0];
 
@@ -33,6 +35,10 @@ public class JUzaygemisi extends Polygon {
             super.ypoints[i] += yYonu;
              
         }
+            */
+
+        super.xpoints = JUzaygemisi.cokgenXArray;
+        super.ypoints = JUzaygemisi.cokgenYArray;        
 
 
     }
