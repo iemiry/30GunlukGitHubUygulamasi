@@ -65,7 +65,7 @@ import java.swing.JFrame;
                 @Override
                 public void keyReleased(KeyEvent e) {
 
-                    
+                    tus = false;
 
                 }
 
@@ -73,7 +73,7 @@ import java.swing.JFrame;
                 @Override
                 public void keyTyped(KeyEvent e) {
 
-                    tus = false;
+                    
 
                 }
 
@@ -134,6 +134,8 @@ import java.swing.JFrame;
                 
                 Graphics2D grafikAyarlari=(Graphics2D) g;
 
+                AffineTransform id = new AffineTransform();
+
                 grafikAyarlari.setColor(Color.BLACK);   
                 grafikAyarlari.fillRect(0,0, getWidth(), getHeight());
 
@@ -147,7 +149,22 @@ import java.swing.JFrame;
                     grafikAyarlari.draw(tas);   
                 }
 
+                if(JOyunalani.tus == true && JOyunalani.tusKodu == 68){
+
+                    JUzaygemisi.yonAcisi += 10;
+                }else
+                    if(JOyunalani.tus == true && JOyunalani.tusKodu ==65){
+
+                        JUzaygemisi.yonAcisi -= 10;
+                    }
+
                 gemi.hareketEt();
+
+                grafikAyarlari.setTranform(id);
+                grafikAyarlari.translate(JOyunalani.oyunAlaniGenislik/2 , JOyunalani.oyunAlaniYukseklik/2);
+                grafikAyarlari.rotate(Math.toRadians(JUzaygemisi.yonAcisi));
+
+
                 grafikAyarlari.draw(gemi);  
 
              }
