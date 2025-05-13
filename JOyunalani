@@ -126,6 +126,8 @@ import java.swing.JFrame;
                     GokTaslari.add(new JGoktasi(JGoktasi.getCokgenXArray(rastXBasPoz),JGoktasi.getCokgenYArray(rastYBasPoz),
                     13, rastXBasPoz, rastYBasPoz));
 
+                    JGoktasi.GokTaslari = GokTaslari;
+
                 }
 
              }
