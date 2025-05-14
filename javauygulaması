@@ -1,6 +1,8 @@
 //başlangıç olarak bu etkinlik java ile yapılabilecek uygulama fikirlerine bakıldı
 
 import java.awt.Polygon;
+import java.util.ArrayList;
+import java.awt.Rectangle;
 
 class JGoktasi extends Polygon{
 
@@ -8,6 +10,9 @@ class JGoktasi extends Polygon{
 	
 	int xYonu=1;
 	int yYonu=1;
+
+	int goktasiGenislik = 26;
+	int goktasiYukseklik = 31;
 
 	int genislik=JOyunalani.oyunAlaniGenislik;
     int yukseklik=JOyunalani.oyunAlaniYukseklik;
@@ -32,8 +37,37 @@ class JGoktasi extends Polygon{
 
 }	
 
+//taşları çarptıracağız ve sekecek
+
+	public Rectangle getSekme(){
+
+		return new Rectangle(super.xpoints[0], super.ypoints[0], goktasiGenislik, goktasiYukseklik);
+	}
+
 
 	public void hareketEt(){
+
+		Rectangle tasKontrol = this.getSekme();
+
+		for(JGoktasi tas : GokTaslari){
+
+			Rectangle digerTas = tas.getSekme();
+
+			if(tas != this && digerTas.intersect(tasKontrol)){
+
+				int rastXYonu = this.xYonu;
+				int rastYYonu = this.yYonu;
+
+				this.xYonu = tas.xYonu;
+				this.yYonu = tas.yYonu;
+
+				tas.xYonu = rastXYonu;
+				tas.yYonu = rastYYonu;
+
+			}
+		}
+
+
 		int uSolXPoz=super.xpoints[0];
 		int uSolYpoz=super.ypoints[0];
 

@@ -3,44 +3,19 @@ import java.awt.Polygon;
 @SuppressWarnings("serial")
 public class JUzaygemisi extends Polygon {
 
-    int uSolXPoz = 500, uSolYpoz = 400;
-    
-    int xYonu = 0;
-    int yYonu = 0;
+    private double xHiz = 0, yHiz = 0;
+    int oAGenislik = JOyunalani.JOyunalani.oyunAlaniGenislik;
+    int oAYukseklik = J.JOyunalani.oyunAlaniYukseklik;
 
-    int genislik = JOyunalani.oyunAlaniGenislik;
-    int yukseklik = JOyunalani.oyunAlaniYukseklik;
+    private double ortalaX = oAGenislik/2, ortalaY = oAYukseklik/2;
 
-    public static int cokgenXArray = {-13, 14, -13, -5, -13};
-    public static int cokgenYArray = {-15, 0, 15, 0, -15};
+    public static int[] cokgenXArray = {-13, 14, -13, -5, -13 };
+    public static int[] cokgenYArray = {-15, 0, 15, 0, -15 };
 
-    static int yonAcisi = 0;
+    private int gemiGensilik = 27, gemiYukseklik = 30;
 
-    public JUzaygemisi(){
+    private double uSolXPoz = getXOrtala() + this.cokgenXArray[0];
+    private double uSolYPoz = getYOrtala() + this.cokgenYArray[0];
 
-        super(cokgenXArray, cokgenYArray, 5);
-    }
-
-    public void hareketEt(){
-        /* 
-        int uSolXPoz = super.xpoints[0];
-        int uSolYPoz = super.ypoints[0];
-
-        if(uSolXPoz < 0 || (uSolXPoz + 25) > genislik) xYonu = -xYonu;
-        if(uSolYPoz < 0 || (uSolYPoz + 50) > yukseklik) yYonu = -yYonu;
-
-        for (int i = 0; i< super.xpoints.length; i++){
-
-            super.xpoints[i] += xYonu;
-            super.ypoints[i] += yYonu;
-             
-        }
-            */
-
-        super.xpoints = JUzaygemisi.cokgenXArray;
-        super.ypoints = JUzaygemisi.cokgenYArray;        
-
-
-    }
 
 }
