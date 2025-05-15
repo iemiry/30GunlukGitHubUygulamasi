@@ -17,5 +17,7 @@ public class JUzaygemisi extends Polygon {
     private double uSolXPoz = getXOrtala() + this.cokgenXArray[0];
     private double uSolYPoz = getYOrtala() + this.cokgenYArray[0];
 
+    
+
 
 }
