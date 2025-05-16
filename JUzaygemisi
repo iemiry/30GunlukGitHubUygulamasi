@@ -32,7 +32,7 @@ public class JUzaygemisi extends Polygon {
 
     public void xPozArttir(double PozArt){this.ortalaX = PozArt;}
     public void yPozArttir(double PozArt){this.ortalaY = PozArt;}
-
+   
 
 
 
