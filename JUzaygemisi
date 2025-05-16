@@ -17,7 +17,24 @@ public class JUzaygemisi extends Polygon {
     private double uSolXPoz = getXOrtala() + this.cokgenXArray[0];
     private double uSolYPoz = getYOrtala() + this.cokgenYArray[0];
 
-    
+    private double yonAcisi = 0, harektAcisi = 0;
+
+    public JUzaygemisi(){
+        super(cokgenXArray, cokgenYArray, 5);
+    }
+
+    public double getXOrtala(){return ortalaX;}
+
+    public double getYOrtala(){return ortalaY;}
+
+    public void setXOrtala(double ortX){this.ortalaX = ortX;}
+    public void setYOrtala(double ortY){this.ortalaY = ortY;}
+
+    public void xPozArttir(double PozArt){this.ortalaX = PozArt;}
+    public void yPozArttir(double PozArt){this.ortalaY = PozArt;}
+
+
+
 
 
 }
