@@ -54,6 +54,41 @@ public class JUzaygemisi extends Polygon {
     public void xHizAzalt(double xHizAz){this.xHiz -= xHizAz;}
     public void yHizAzalt(double yHizAz){this.yHiz -= yHizAz;}
 
+    public void setHareketAcisi(double hareketAcisi){this.hareketAcisi += hareketAcisi;}
+    public double getHareketAcisi(){return hareketAcisi;}
+
+    public double gemiXHareketAcisi(double xHareketAcisi){
+
+        return (double) (Math.cos(xHareketAcisi * Math.PI/180));
+    }
+
+    public double gemiYHareketAcisi(double yHareketAcisi){
+
+        return (double) (Math.sin(yHareketAcisi * Math.PI/180));
+    }
+
+    public double getYonAcisi(){return yonAcisi;}
+
+    public void yonAcisiArttir(){
+
+        if(getYonAcisi() >= 355){
+            yonAcisi = 0;
+        }
+        else{
+            yonAcisi +=5;
+        }
+    }
+
+    public void yonAcisiAzalt(){
+
+        if(getYonAcisi() < 0){
+            yonAcisi = 355;
+        }
+        else{
+            yonAcisi -=5;
+        }
+    }
+
 
 
 
