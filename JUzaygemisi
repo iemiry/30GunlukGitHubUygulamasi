@@ -1,93 +1,125 @@
 import java.awt.Polygon;
 
 @SuppressWarnings("serial")
-public class JUzaygemisi extends Polygon {
+public class JUzaygemisi extends Polygon
+{
 
     private double xHiz = 0, yHiz = 0;
-    int oAGenislik = JOyunalani.JOyunalani.oyunAlaniGenislik;
-    int oAYukseklik = J.JOyunalani.oyunAlaniYukseklik;
+int oAGenislik = JOyunalani.JOyunalani.oyunAlaniGenislik;
+int oAYukseklik = J.JOyunalani.oyunAlaniYukseklik;
 
-    private double ortalaX = oAGenislik/2, ortalaY = oAYukseklik/2;
+private double ortalaX = oAGenislik / 2, ortalaY = oAYukseklik / 2;
 
-    public static int[] cokgenXArray = {-13, 14, -13, -5, -13 };
-    public static int[] cokgenYArray = {-15, 0, 15, 0, -15 };
+public static int[] cokgenXArray = { -13, 14, -13, -5, -13 };
+public static int[] cokgenYArray = { -15, 0, 15, 0, -15 };
 
-    private int gemiGensilik = 27, gemiYukseklik = 30;
+private int gemiGensilik = 27, gemiYukseklik = 30;
 
-    private double uSolXPoz = getXOrtala() + this.cokgenXArray[0];
-    private double uSolYPoz = getYOrtala() + this.cokgenYArray[0];
+private double uSolXPoz = getXOrtala() + this.cokgenXArray[0];
+private double uSolYPoz = getYOrtala() + this.cokgenYArray[0];
 
-    private double yonAcisi = 0, harektAcisi = 0;
+private double yonAcisi = 0, harektAcisi = 0;
 
-    public JUzaygemisi(){
-        super(cokgenXArray, cokgenYArray, 5);
+public JUzaygemisi()
+{
+    super(cokgenXArray, cokgenYArray, 5);
+}
+
+public double getXOrtala() { return ortalaX; }
+
+public double getYOrtala() { return ortalaY; }
+
+public void setXOrtala(double ortX) { this.ortalaX = ortX; }
+public void setYOrtala(double ortY) { this.ortalaY = ortY; }
+
+public void xPozArttir(double PozArt) { this.ortalaX = PozArt; }
+public void yPozArttir(double PozArt) { this.ortalaY = PozArt; }
+
+public double getUSolXPoz() { return uSolXPoz}
+;
+public double getUSolYPoz() { return uSolYPoz}
+;
+
+public void setUSolXPoz(double usXPoz) { this.uSolXPoz = usXPoz; }
+public void setUSolYPoz(double usYPoz) { this.uSolYPoz = usYPoz; }
+
+public int getGemiGenislik() { return gemiGensilik; }
+public int getGemiYukseklik() { return gemiYukseklik; }
+
+public double getXHiz() { return xHiz; }
+public double getYHiz() { return yHiz; }
+
+public void setXHiz(double xHiz) { this.xHiz = xHiz; }
+public void setYHiz(double yHiz) { this.yHiz = yHiz; }
+
+public void xHizArttir(double xHizArt) { this.xHiz += xHizArt; }
+public void yHizArttir(double yHizArt) { this.yHiz += yHizArt; }
+
+public void xHizAzalt(double xHizAz) { this.xHiz -= xHizAz; }
+public void yHizAzalt(double yHizAz) { this.yHiz -= yHizAz; }
+
+public void setHareketAcisi(double hareketAcisi) { this.hareketAcisi += hareketAcisi; }
+public double getHareketAcisi() { return hareketAcisi; }
+
+public double gemiXHareketAcisi(double xHareketAcisi)
+{
+
+    return (double)(Math.cos(xHareketAcisi * Math.PI / 180));
+}
+
+public double gemiYHareketAcisi(double yHareketAcisi)
+{
+
+    return (double)(Math.sin(yHareketAcisi * Math.PI / 180));
+}
+
+public double getYonAcisi() { return yonAcisi; }
+
+public void yonAcisiArttir()
+{
+
+    if (getYonAcisi() >= 355)
+    {
+        yonAcisi = 0;
     }
-
-    public double getXOrtala(){return ortalaX;}
-
-    public double getYOrtala(){return ortalaY;}
-
-    public void setXOrtala(double ortX){this.ortalaX = ortX;}
-    public void setYOrtala(double ortY){this.ortalaY = ortY;}
-
-    public void xPozArttir(double PozArt){this.ortalaX = PozArt;}
-    public void yPozArttir(double PozArt){this.ortalaY = PozArt;}
-
-    public double getUSolXPoz(){return uSolXPoz};
-    public double getUSolYPoz(){return uSolYPoz};
-
-    public void setUSolXPoz(double usXPoz){this.uSolXPoz = usXPoz;}
-    public void setUSolYPoz(double usYPoz){this.uSolYPoz = usYPoz;}
-
-    public int getGemiGenislik(){return gemiGensilik;}
-    public int getGemiYukseklik(){return gemiYukseklik;}
-
-    public double getXHiz(){return xHiz;}
-    public double getYHiz(){return yHiz;}
-
-    public void setXHiz(double xHiz){this.xHiz = xHiz;}
-    public void setYHiz(double yHiz){this.yHiz = yHiz;}
-
-    public void xHizArttir(double xHizArt){this.xHiz += xHizArt;}
-    public void yHizArttir(double yHizArt){this.yHiz += yHizArt;}
-
-    public void xHizAzalt(double xHizAz){this.xHiz -= xHizAz;}
-    public void yHizAzalt(double yHizAz){this.yHiz -= yHizAz;}
-
-    public void setHareketAcisi(double hareketAcisi){this.hareketAcisi += hareketAcisi;}
-    public double getHareketAcisi(){return hareketAcisi;}
-
-    public double gemiXHareketAcisi(double xHareketAcisi){
-
-        return (double) (Math.cos(xHareketAcisi * Math.PI/180));
+    else
+    {
+        yonAcisi += 5;
     }
+}
 
-    public double gemiYHareketAcisi(double yHareketAcisi){
+public void yonAcisiAzalt()
+{
 
-        return (double) (Math.sin(yHareketAcisi * Math.PI/180));
+    if (getYonAcisi() < 0)
+    {
+        yonAcisi = 355;
     }
-
-    public double getYonAcisi(){return yonAcisi;}
-
-    public void yonAcisiArttir(){
-
-        if(getYonAcisi() >= 355){
-            yonAcisi = 0;
-        }
-        else{
-            yonAcisi +=5;
-        }
+    else
+    {
+        yonAcisi -= 5;
     }
+}
 
-    public void yonAcisiAzalt(){
+public Rectangle getSekme()
+{
 
-        if(getYonAcisi() < 0){
-            yonAcisi = 355;
-        }
-        else{
-            yonAcisi -=5;
-        }
-    }
+    return new Rectangle((int)getXOrtala() - 14, getYOrtala() - 14, getGemiGenislik(), getGemiYukseklik());
+}
+
+public double getGemiBurunX()
+{
+
+    return this.getXOrtala() + Math.cos(getYonAcisi) * 14;
+}
+
+public double getGemiBurunY()
+{
+
+    return this.getYOrtala() + Math.sin(getYonAcisi) * 14;
+}
+    
+
 
 
 
